@@ -1,17 +1,36 @@
+:root{
+    --clr-gray:hsl(212, 45%, 89%);
+    --clr-grayish-blue:hsl(220, 15%, 55%);
+    --clr-dark-blue:hsl(218, 44%, 22%);
+}
+
 body{
-    background-color: hsl(212, 45%, 89%);
+    background-color: var(--clr-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: outfit;
 }
 .qr-card{
     width: 300px;
-    height: fit-content;
-    margin: auto;
     background-color: #fff;
     padding: 1em;
     text-align: center;
     border-radius: 1em;
-    box-shadow: 0px 10px 10px hsl(210, 1%, 58%);
+    box-shadow: 0px 0px 40px var(--clr-grayish-blue);
 }
 .qr-card img{
     max-width: 100%;
     border-radius: 1em;
+}
+
+.qr-card h2 {
+    color: var(--clr-dark-blue);
+    font-weight: 700;
+}
+
+.qr-card p {
+    color: var(--clr-grayish-blue);
+    padding: 0.5em 1.7em;
 }
