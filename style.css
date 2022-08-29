@@ -1,0 +1,17 @@
+body{
+    background-color: hsl(212, 45%, 89%);
+}
+.qr-card{
+    width: 300px;
+    height: fit-content;
+    margin: auto;
+    background-color: #fff;
+    padding: 1em;
+    text-align: center;
+    border-radius: 1em;
+    box-shadow: 0px 10px 10px hsl(210, 1%, 58%);
+}
+.qr-card img{
+    max-width: 100%;
+    border-radius: 1em;
+}
