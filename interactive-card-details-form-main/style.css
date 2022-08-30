@@ -1,0 +1,26 @@
+body {
+    background-image: url("images/bg-main-desktop.png");
+    background-repeat:no-repeat;
+    position: relative;
+    height: 100vh;
+  }
+
+  
+  .card-front{
+    width: 31vw;
+    aspect-ratio: 447 / 245;
+    background-image: url("images/bg-card-front.png");
+    background-size: contain;
+    position:absolute;
+    left: 11vw;
+    top: 15vh;
+  }
+  .card-back{
+    width: 31vw;
+    aspect-ratio: 447 / 245;
+    background-image: url("images/bg-card-back.png");
+    background-size: contain;
+    position:absolute;
+    left: 20vw;
+    top: 55vh;
+  }
