@@ -32,5 +32,6 @@ body{
 
 .qr-card p {
     color: var(--clr-grayish-blue);
-    padding: 0.5em 1.7em;
+    padding: 0em 1.7em;
+    font-size: 15px;
 }
