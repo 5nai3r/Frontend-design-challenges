@@ -2,12 +2,16 @@
 :root{
   --dark-violet:hsl(278, 68%, 11%);
   --grayish-dark-violet:hsl(279, 6%, 55%);
+  --light-violet: hsl(270, 3%, 87%);
+  --error-red: hsl(0, 100%, 66%);
 }
 body {
     background-image: url("images/bg-main-desktop.png");
     background-repeat:no-repeat;
     position: relative;
     height: 100vh;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
   }
 
   
@@ -19,7 +23,31 @@ body {
     position:absolute;
     left: 11vw;
     top: 15vh;
+    color: #FFFFFF;
+    padding: 2rem;
+    padding-bottom: 0;
   }
+
+  .card-front .number {
+    margin-top: 2.2rem;
+    margin-bottom: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    
+  }
+  .card-back .cvc {
+    position:absolute;
+    top: 44%;
+    right: 14%;
+    color: #FFFFFF;
+  }
+  .bottom .name {
+    float: left;
+  }
+  .bottom .date {
+    float: right;
+  }
+
   .card-back{
     width: 31vw;
     aspect-ratio: 447 / 245;
@@ -32,18 +60,35 @@ body {
   
   .form{
     position: absolute;
-    left: 50vw;
+    left: 55vw;
     top: 20vh;
     width: 380px;
+  }
+  .form div {
+    margin-top: 2em;
+  }
+  .form label {
+    text-transform: uppercase;
   }
 
   .form input {
     width: 100%;
     height: 45px;
+    border: 2px solid var(--light-violet);
+    border-radius: 5px;
+  }
+  input.error{
+    border-color: var(--error-red);
+  }
+
+  .form p {
+    color: var(--error-red);
+    font-size: 0.8em;
   }
   .form .expDate{
     width: 50%;
     display: inline-block;
+    margin: 0;
   }
   .form .expDate input {
     width: 48%;
@@ -52,9 +97,12 @@ body {
   .form .cvc {
     width: 48%;
     display: inline-block;
+    margin-top: 0;
+    margin-bottom: auto;
   }
 
 .button {
+  margin-top: 1em;
   background-color: var(--dark-violet);
   border-radius: 8px;
   border-style: none;
@@ -62,6 +110,7 @@ body {
   cursor: pointer;
   display: inline-block; 
   height: 40px;
+  width: 100%;
   outline: none;
   padding: 10px 16px;
   text-align: center;
@@ -76,4 +125,45 @@ body {
 .button:hover,
 .button:focus {
   background-color: var(--grayish-dark-violet);
+}
+
+
+@media (max-width: 400px) {
+  body {
+    background-image: url('images/bg-main-mobile.png');
+  }
+  .card-back {
+    width: 70vw;
+    top: 10vw;
+    left: 20vw;
+  }
+  .card-front {
+    width: 70vw;
+    top:33vw;
+    left: 4vw;
+  }
+  .form{
+    position:static;
+    padding: 1rem;
+    margin-top: 150px;
+  }
+  .card-front .number {
+    margin-top: 1.8rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    
+  }
+  .card-front .bottom {
+    font-size: 0.7rem;
+  }
+  .card-front .logo {
+    width: 13vw;
+  }
+  .card-back .cvc{
+    font-size: 0.8rem;
+  }
+  .form{
+    font-size: 13px;
+  }
 }
