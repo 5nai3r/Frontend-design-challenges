@@ -8,7 +8,8 @@ Vue.createApp({
         expY: '',
         expM:'',
         cvc:'',
-        firstRun:true
+        firstRun:true,
+        submited:false
       }
     },
     computed: {
@@ -45,7 +46,7 @@ Vue.createApp({
     methods: {
       formSubmit: function(){
         this.firstRun = false
-        if (this.formValid) alert('Submit')
+        if (this.formValid) this.submited=true
       }
     }
   }).mount('#app')

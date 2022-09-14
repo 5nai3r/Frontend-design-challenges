@@ -58,7 +58,7 @@ body {
     top: 55vh;
   }
   
-  .form{
+  .form, .success{
     position: absolute;
     left: 55vw;
     top: 20vh;
@@ -127,6 +127,26 @@ body {
 .button:focus {
   background-color: var(--grayish-dark-violet);
 }
+.success {
+  background-color: #fff;
+  text-align: center;
+  top: 30vh;
+  max-width: 95%;
+}
+.success img {
+  margin-inline: auto;
+}
+.success h1 {
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.success p {
+  margin-bottom: 2rem;
+}
+.hidden {
+  display: none;
+}
 
 
 @media (max-width: 400px) {
@@ -167,4 +187,10 @@ body {
   .form{
     font-size: 13px;
   }
+
+  .success {
+    left: 2.5%;
+    top:300px;
+  }
+
 }

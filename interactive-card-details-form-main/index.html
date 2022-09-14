@@ -19,11 +19,8 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-  <!-- Completed state start -->
 
-  Thank you!
-  We've added your card details
-  Continue
+  
   <div id="app">
   <div class="card-back">
     <span class="cvc">{{cvc}}</span>
@@ -39,7 +36,7 @@
     </div>
   </div>
 
-  <div class="form">
+  <div :class="{form:true,hidden:submited}">
     <form>
       <div>
         <label for="fname">Card holder name</label><br>
@@ -66,6 +63,13 @@
     </div>
       <button @click.prevent="formSubmit" class="button" type="submit">Confirm</button>
     </form>
+  </div>
+
+  <div :class="{success:true,hidden:!submited}">
+    <img src="images/icon-complete.svg" alt="">
+    <h1>Thank you!</h1>
+    <p>We've added your card details</p>
+    <button class="button">Continue</button>
   </div>
 </div>
   <div class="attribution">
