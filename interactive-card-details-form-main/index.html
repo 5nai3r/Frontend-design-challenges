@@ -14,49 +14,28 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
-<link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
   <!-- Completed state start -->
 
   Thank you!
   We've added your card details
   Continue
-  
+  <div id="app">
   <div class="card-back">
-    <span class="cvc">000</span>
+    <span class="cvc">{{cvc}}</span>
   </div>
   <div class="card-front">
     <div class="logo"><img src="images/card-logo.svg" alt="card-logo"></div>
     <div class="number">
-      <p>1234 5678 9123 0000</p>
+      <p>{{number}}</p>
     </div>
     <div class="bottom">
-      <span class="name">Jane Appleseed</span>
-      <span class="date">09/00</span>
+      <span class="name">{{name}}</span>
+      <span class="date">{{expM}}/{{expY}}</span>
     </div>
   </div>
 
@@ -64,33 +43,36 @@
     <form>
       <div>
         <label for="fname">Card holder name</label><br>
-        <input type="text" id="fname" name="fname" placeholder=" e.g. Jane Appleseed"><br>
+        <input v-model='name' :class="{error:!nameValid}" type="text" id="fname" name="fname" placeholder=" e.g. Jane Appleseed"><br>
+        <p v-show="!nameValid">Can't be blank</p>
       </div>
       <div>
         <label for="lname">Card Number</label><br>
-        <input class="error" type="text" id="lname" name="lname" placeholder="e.g. 1234 5678 9123 0000"><br>
-        <p>Wrong Format, numbers only</p>
+        <input v-model='number' :class="{error:!numberValid}" type="text" id="lname" name="lname" placeholder="e.g. 1234 5678 9123 0000"><br>
+        <p v-show='!numberValid'>Wrong Format, numbers only</p>
       </div>
       <div>
       <div class="expDate">
         <label for="mm">Exp date (MM/YY)</label><br>
-        <input type="text" id="mm" name="mm" placeholder="MM">
-        <input type="text" id="yy" name="yy" placeholder="YY">
-        <p>Can't be blank</p>
+        <input v-model="expM" :class="{error:!mmValid}" type="text" id="mm" name="mm" placeholder="MM">
+        <input v-model='expY' :class="{error:!yyValid}" type="text" id="yy" name="yy" placeholder="YY">
+        <p v-show="!expDateValid">Can't be blank</p>
       </div>
       <div class="cvc">
         <label for="cvc">CVC</label><br>
-        <input type="text" id="cvc" name="cvc" placeholder="e.g. 123">
-        <p>Can't be blank</p>
+        <input v-model="cvc" :class="{error:!cvcValid}" type="text" id="cvc" name="cvc" placeholder="e.g. 123">
+        <p v-show="!cvcValid">Can't be blank</p>
       </div>
     </div>
-      <button class="button" type="submit">Confirm</button>
+      <button @click.prevent="formSubmit" class="button" type="submit">Confirm</button>
     </form>
   </div>
-
+</div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">C. Ismail</a>.
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>

@@ -89,6 +89,7 @@ body {
     width: 50%;
     display: inline-block;
     margin: 0;
+    vertical-align: top;
   }
   .form .expDate input {
     width: 48%;
@@ -98,7 +99,7 @@ body {
     width: 48%;
     display: inline-block;
     margin-top: 0;
-    margin-bottom: auto;
+    vertical-align: top;
   }
 
 .button {
