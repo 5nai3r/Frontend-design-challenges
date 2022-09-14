@@ -46,19 +46,19 @@
       <div>
         <label for="lname">Card Number</label><br>
         <input v-model='number' :class="{error:!numberValid}" type="text" id="lname" name="lname" placeholder="e.g. 1234 5678 9123 0000"><br>
-        <p v-show='!numberValid'>Wrong Format, numbers only</p>
+        <p v-show='!numberValid'>Enter Correct number</p>
       </div>
       <div>
       <div class="expDate">
         <label for="mm">Exp date (MM/YY)</label><br>
         <input v-model="expM" :class="{error:!mmValid}" type="text" id="mm" name="mm" placeholder="MM">
         <input v-model='expY' :class="{error:!yyValid}" type="text" id="yy" name="yy" placeholder="YY">
-        <p v-show="!expDateValid">Can't be blank</p>
+        <p v-show="!expDateValid">Enter Correct Date</p>
       </div>
       <div class="cvc">
         <label for="cvc">CVC</label><br>
         <input v-model="cvc" :class="{error:!cvcValid}" type="text" id="cvc" name="cvc" placeholder="e.g. 123">
-        <p v-show="!cvcValid">Can't be blank</p>
+        <p v-show="!cvcValid">Enter Correct CVC</p>
       </div>
     </div>
       <button @click.prevent="formSubmit" class="button" type="submit">Confirm</button>
