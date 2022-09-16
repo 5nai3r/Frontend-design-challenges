@@ -9,7 +9,7 @@ body {
     background-image: url("images/bg-main-desktop.png");
     background-repeat:no-repeat;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Space Grotesk';
     font-weight: 500;
   }
@@ -63,6 +63,7 @@ body {
     left: 55vw;
     top: 20vh;
     width: 380px;
+    max-width: 95%;
   }
   .form div {
     margin-top: 2em;
@@ -164,9 +165,8 @@ body {
     left: 4vw;
   }
   .form{
-    position:static;
-    padding: 1rem;
-    margin-top: 150px;
+    left: 2.5%;
+    top:300px;
   }
   .card-front .number {
     margin-top: 1.8rem;
