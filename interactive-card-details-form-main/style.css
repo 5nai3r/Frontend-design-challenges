@@ -7,7 +7,7 @@
 }
 body {
     background-image: url("images/bg-main-desktop.png");
-    background-repeat:no-repeat;
+    background-repeat:repeat-y;
     position: relative;
     min-height: 100vh;
     font-family: 'Space Grotesk';
@@ -150,9 +150,10 @@ body {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   body {
     background-image: url('images/bg-main-mobile.png');
+    background-repeat: repeat-x;
   }
   .card-back {
     width: 70vw;
@@ -186,6 +187,54 @@ body {
   }
   .form{
     font-size: 13px;
+  }
+
+  .success {
+    left: 2.5%;
+    top:300px;
+  }
+
+}
+
+
+@media (max-width: 770px) and (min-width: 450px) {
+  body {
+    background-image: url('images/bg-main-mobile.png');
+    background-repeat: repeat-x;
+  }
+  .card-back {
+    width: 35vw;
+    top: 5vw;
+    left: 50vw;
+  }
+  .card-front {
+    width: 35vw;
+    top:16vw;
+    left: 14vw;
+  }
+  .form{
+    width: 90%;
+    left: 5%;
+    top:300px;
+  }
+  .card-front .number {
+    margin-top: 1.8rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    
+  }
+  .card-front .bottom {
+    font-size: 0.7rem;
+  }
+  .card-front .logo {
+    width: 13vw;
+  }
+  .card-back .cvc{
+    font-size: 0.8rem;
+  }
+  .form{
+    font-size: 16px;
   }
 
   .success {
