@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="container">
-<main class="grid">
+<main class="grid" id="app">
 
   <div class="card main">
     <div class="name">
@@ -28,9 +28,9 @@
      </div>
     </div>
     <ul>
-      <li>Daily</li>
-      <li class="selected">Weekly</li>
-      <li>Monthly</li>
+      <li @click="update('daily')">Daily</li>
+      <li @click="update('weekly')" class="selected">Weekly</li>
+      <li @click="update('monthly')" >Monthly</li>
     </ul>
   </div>
 
@@ -41,8 +41,8 @@
         <a href=""><img src='images/icon-ellipsis.svg' alt=""></a>
     </div>
     <div class="time">
-      <span class="current">5hrs</span>
-       <span class="previous">Previous - 7hrs</span>
+      <span class="current">{{work.current}}hrs</span>
+       <span class="previous">Previous - {{work.previous}}hrs</span>
     
     </div>
   </div>
@@ -55,8 +55,8 @@
           <a href=""><img src='images/icon-ellipsis.svg' alt=""></a>
       </div>
       <div class="time">
-        <span class="current">5hrs</span>
-         <span class="previous">Previous - 7hrs</span>
+        <span class="current">{{play.current}}hrs</span>
+         <span class="previous">Previous - {{play.previous}}hrs</span>
       
       </div>
     </div>
@@ -68,8 +68,8 @@
             <a href=""><img src='images/icon-ellipsis.svg' alt=""></a>
         </div>
         <div class="time">
-          <span class="current">5hrs</span>
-           <span class="previous">Previous - 7hrs</span>
+          <span class="current">{{study.current}}hrs</span>
+           <span class="previous">Previous - {{study.previous}}hrs</span>
         
         </div>
       </div>
@@ -82,8 +82,8 @@
               <a href=""><img src='images/icon-ellipsis.svg' alt=""></a>
           </div>
           <div class="time">
-            <span class="current">5hrs</span>
-             <span class="previous">Previous - 7hrs</span>
+            <span class="current">{{excercise.current}}hrs</span>
+             <span class="previous">Previous - {{excercise.previous}}hrs</span>
           
           </div>
         </div>
@@ -96,8 +96,8 @@
                 <a href=""><img src='images/icon-ellipsis.svg' alt=""></a>
             </div>
             <div class="time">
-              <span class="current">5hrs</span>
-               <span class="previous">Previous - 7hrs</span>
+              <span class="current">{{social.current}}hrs</span>
+               <span class="previous">Previous - {{social.previous}}hrs</span>
             
             </div>
           </div>
@@ -110,8 +110,8 @@
                   <a href=""><img src='images/icon-ellipsis.svg' alt=""></a>
               </div>
               <div class="time">
-                <span class="current">5hrs</span>
-                 <span class="previous">Previous - 7hrs</span>
+                <span class="current">{{selfcare.current}}hrs</span>
+                 <span class="previous">Previous - {{selfcare.previous}}hrs</span>
               
               </div>
             </div>
@@ -125,5 +125,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">C. ismail</a>.
   </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
