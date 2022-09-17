@@ -13,6 +13,7 @@
     --clr-neutral-500 : hsl(235, 45%, 61%);
     --clr-neutral-700 :hsl(236, 100%, 87%);
 }
+[v-cloak] { display: none; }
 .clr-700{
     color: var(--clr-neutral-700);
 }
