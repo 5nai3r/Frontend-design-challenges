@@ -13,18 +13,28 @@
     --clr-neutral-500 : hsl(235, 45%, 61%);
     --clr-neutral-700 :hsl(236, 100%, 87%);
 }
-
+.clr-700{
+    color: var(--clr-neutral-700);
+}
 body{
     font-size: 18px;
     font-family: Rubik;
     background-color: var(--clr-neutral-100);
     color: #fff;
+    font-weight: 300;
+    
+}
+.container { 
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
 }
 .grid{
     display: grid;
     gap: 2rem;
     max-width: 250px;
     margin-inline: auto;
+    
 }
 
 .main .image {
@@ -60,6 +70,9 @@ body{
     background-color:var(--clr-neutral-300);
     margin-top: 45px;
     height: 100%;
+    border-radius: 10px;
+    padding-inline: 25px;
+    padding-block: 20px;
 }
 
 .main .name {
@@ -80,6 +93,11 @@ body{
     display: inline-block;
     text-align: center;
     width: 30%;
+    color: var(--clr-neutral-500);
+    cursor: pointer;
+}
+.main ul li.selected,.main ul li:hover{
+    color: #fff;
 }
 
 
@@ -111,6 +129,27 @@ body{
     background-image: url('images/icon-self-care.svg');
 }
 
+.content .title,.content .time{
+    display: flex;
+    align-items: center;
+    
+}
+.content .title{
+    font-weight: 400;
+    padding-bottom: 0px;
+}
+.content .title a,.time .previous{
+    margin-left: auto;
+}
+
+.time .current {
+    font-size: 30px;
+}
+.time .previous { 
+    font-size: 14px;
+    color: var(--clr-neutral-700);
+}
+
 @media (min-width:800px) {
     .grid{
         grid-template-columns: repeat(4,1fr);
@@ -126,12 +165,19 @@ body{
         display:list-item;
         width: 100%;
         text-align: left;
+        margin-bottom: 25px;
     }
     .main ul {
+        margin-top: 25px;
         margin-left: 30px;
     }
     .username h1 {
         font-size: 30px;
         font-weight: 400;
+    }
+    .content .time{display: block;}
+    .time .current {
+        font-size: 42px;
+        display: block;
     }
 }
