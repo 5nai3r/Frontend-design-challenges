@@ -28,9 +28,9 @@
      </div>
     </div>
     <ul>
-      <li @click="update('daily')">Daily</li>
-      <li @click="update('weekly')" class="selected">Weekly</li>
-      <li @click="update('monthly')" >Monthly</li>
+      <li @click="update('daily')" :class="{selected:previousLabel=='Yesterday'}">Daily</li>
+      <li @click="update('weekly')" :class="{selected:previousLabel=='Last Week'}">Weekly</li>
+      <li @click="update('monthly')" :class="{selected:previousLabel=='Last Month'}">Monthly</li>
     </ul>
   </div>
 
@@ -42,7 +42,7 @@
     </div>
     <div class="time">
       <span class="current">{{work.current}}hrs</span>
-       <span class="previous">Previous - {{work.previous}}hrs</span>
+       <span class="previous">{{previousLabel}} - {{work.previous}}hrs</span>
     
     </div>
   </div>
@@ -56,7 +56,7 @@
       </div>
       <div class="time">
         <span class="current">{{play.current}}hrs</span>
-         <span class="previous">Previous - {{play.previous}}hrs</span>
+         <span class="previous">{{previousLabel}} - {{play.previous}}hrs</span>
       
       </div>
     </div>
@@ -69,7 +69,7 @@
         </div>
         <div class="time">
           <span class="current">{{study.current}}hrs</span>
-           <span class="previous">Previous - {{study.previous}}hrs</span>
+           <span class="previous">{{previousLabel}} - {{study.previous}}hrs</span>
         
         </div>
       </div>
@@ -83,7 +83,7 @@
           </div>
           <div class="time">
             <span class="current">{{excercise.current}}hrs</span>
-             <span class="previous">Previous - {{excercise.previous}}hrs</span>
+             <span class="previous">{{previousLabel}} - {{excercise.previous}}hrs</span>
           
           </div>
         </div>
@@ -97,7 +97,7 @@
             </div>
             <div class="time">
               <span class="current">{{social.current}}hrs</span>
-               <span class="previous">Previous - {{social.previous}}hrs</span>
+               <span class="previous">{{previousLabel}} - {{social.previous}}hrs</span>
             
             </div>
           </div>
@@ -111,7 +111,7 @@
               </div>
               <div class="time">
                 <span class="current">{{selfcare.current}}hrs</span>
-                 <span class="previous">Previous - {{selfcare.previous}}hrs</span>
+                 <span class="previous">{{previousLabel}} - {{selfcare.previous}}hrs</span>
               
               </div>
             </div>

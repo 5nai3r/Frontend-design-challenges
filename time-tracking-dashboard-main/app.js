@@ -112,7 +112,8 @@ Vue.createApp({
           study: {'current':4,'previous':33},
           excercise: {'current':4,'previous':33},
           social: {'current':4,'previous':33},
-          selfcare: {'current':4,'previous':33}
+          selfcare: {'current':4,'previous':33},
+          previousLabel: 'Last Week'
       }
     },
     methods: {
@@ -134,6 +135,10 @@ Vue.createApp({
 
             this.selfcare.current = this.data[5]['timeframes'][s].current
             this.selfcare.previous = this.data[5]['timeframes'][s].previous
+
+            if (s == 'daily') this.previousLabel ='Yesterday'
+            if (s == 'weekly') this.previousLabel ='Last Week'
+            if (s == 'monthly') this.previousLabel ='Last Month'
         }
     }
   }).mount('#app')
