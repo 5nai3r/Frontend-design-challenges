@@ -1,13 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;800&display=swap');
 :root{
     --clr-blue: hsl(246, 80%, 60%);
-    --clr-light-red :hsl(15, 100%, 70%);
+    --clr-light-red-1 :hsl(15, 100%, 70%);
     --clr-soft-blue: hsl(195, 74%, 62%);
-    --clr-light-red :hsl(348, 100%, 68%);
+    --clr-light-red-2 :hsl(348, 100%, 68%);
     --clr-lime-greem : hsl(145, 58%, 55%);
+    --clr-violet:hsl(264, 64%, 52%);
+    --clr-soft-orange:hsl(43, 84%, 65%);
+
+    --clr-neutral-100 :hsl(226, 43%, 10%);
+    --clr-neutral-300 : hsl(235, 46%, 20%);
+    --clr-neutral-500 : hsl(235, 45%, 61%);
+    --clr-neutral-700 :hsl(236, 100%, 87%);
 }
 
 body{
     font-size: 18px;
+    font-family: Rubik;
+    background-color: var(--clr-neutral-100);
+    color: #fff;
 }
 .grid{
     display: grid;
@@ -24,20 +35,35 @@ body{
     display: inline-block;
     width: 65%;
     margin-left: 6px;
+    
+}
+.username>span {
+    font-size: 13px;
 }
 .username h1 {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 400;
 }
 .card {
     padding: 0rem;
     max-width: 250px;
     overflow: hidden;
     border-radius: 10px;
-    background-color:brown;
+    background-color:var(--clr-neutral-300);
+
+    /* icon pos */
+    background-repeat: no-repeat;
+    background-position: 95% -10%;
+    background-size: 65px;
+}
+.card .content {
+    background-color:var(--clr-neutral-300);
+    margin-top: 45px;
+    height: 100%;
 }
 
 .main .name {
-    background-color: aqua;
+    background-color: var(--clr-blue);
     border-radius: 10px;
     padding-left: 30px;
     padding-top: 30px;
@@ -55,6 +81,36 @@ body{
     text-align: center;
     width: 30%;
 }
+
+
+/* cards background */
+.card.work{
+    background-color: var(--clr-light-red-1);
+    background-image: url('images/icon-work.svg');
+
+}
+.card.play{
+    background-color: var(--clr-soft-blue);
+    background-image: url('images/icon-play.svg');
+}
+.card.study{
+    background-color: var(--clr-light-red-2);
+    background-image: url('images/icon-study.svg');
+}
+.card.excercise{
+    background-color: var(--clr-lime-greem);
+    background-image: url('images/icon-exercise.svg');
+    background-position-y: 0;
+}
+.card.social{
+    background-color: var(--clr-violet);
+    background-image: url('images/icon-social.svg');
+}
+.card.selfcare{
+    background-color: var(--clr-soft-orange);
+    background-image: url('images/icon-self-care.svg');
+}
+
 @media (min-width:800px) {
     .grid{
         grid-template-columns: repeat(4,1fr);
@@ -74,5 +130,8 @@ body{
     .main ul {
         margin-left: 30px;
     }
-    
+    .username h1 {
+        font-size: 30px;
+        font-weight: 400;
+    }
 }
