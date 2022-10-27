@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700); 
+
+:root{
+    --crl-blue-100 : hsl(243, 100%, 93%);
+    --crl-blue-300 : hsl(229, 7%, 55%);
+    --crl-blue-500 : hsl(228, 56%, 26%);
+    --crl-blue-800 : hsl(229, 57%, 11%);
+    
+    --gradiant-1 : linear-gradient(to right,hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+
+}
+
+body{
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 400;
+    background-image: url("images/bg-mobile.png");
+    background-size: cover;
+    padding: 0 1rem;
+    background-color: var(--crl-blue-800);
+    min-height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.bold{font-weight: 700;}
+
+
+.main-container{
+    display: grid;
+    gap: 1rem;
+    width: 62.5rem;
+    align-items: end;
+}
+.control{
+    background-color: var(--crl-blue-500);
+    padding: 3rem;
+    border-radius: 0.5rem 6rem 0.5rem 0.5rem;
+}
+
+.control .header{
+margin-bottom: 2rem;
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+.buttons button{
+   padding: 0.5rem;
+   height: 2.8125rem;
+   width: 2.8125rem;
+   background-color: var(--crl-blue-800);
+   border-width: 0;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: box-shadow .3s;
+}
+button:hover{
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 7px 20px -5px;
+}
+
+
+.usage{
+    color: white;
+    background-color: var(--crl-blue-500);
+    padding: 2rem 2.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.usage .progress-bar{
+    width: 100%;
+    height: 1.5rem;
+    background-color: var(--crl-blue-800);
+    border-radius: 2rem;
+    margin-block: 0.5rem;
+
+}
+
+.progress-bar .bar {
+    width: 50%;
+    height: 100%;
+    background-image: var(--gradiant-1);
+    border: 4px solid var(--crl-blue-800);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    animation-name: progress-anim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+.bar .circle {
+    height: 80%;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 3px;
+    
+}
+
+
+.usage .range{
+    display: flex;
+    justify-content: space-between;
+}
+
+.usage .usage-left {
+    background-color: white;
+    color: black;
+    position: absolute;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+
+}
+
+.usage-left .bold{
+    font-size: 2rem;
+}
+
+
+
+
+@media (min-width: 430px) {
+
+    body{
+        background-image: url("images/bg-desktop.png");
+        background-size: 100% 50%;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+    }
+    .main-container{
+        gap: 2rem;
+        grid-template-columns: 1fr 2fr;
+    }
+    
+    .usage .usage-left {
+        top: 0;
+        bottom: auto;
+        left: auto;
+        right: 2rem;
+        transform: translateX(0%) translateY(-50%);
+        border-radius: 10px 10px 0 10px;
+    }
+    .usage .usage-left::after{
+        content: "";
+        width: 0;
+	    height: 0;
+        border-width: 0 1.5rem 1.5rem 0;
+	    border-color: transparent white transparent transparent;
+	    border-style: solid;
+        position: absolute;
+        bottom: -1.4rem;
+        right: 0rem; 
+    }
+    
+
+  }
+  
+
+
+
+  @keyframes progress-anim {
+    from {width: 25%;}
+    to {width: 100%;}
+  }
