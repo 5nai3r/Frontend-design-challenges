@@ -6,6 +6,7 @@
     --color-grey-400: hsl(216, 12%, 54%);
     --color-blue-500: hsl(211, 19%, 27%);
     --color-blue-600: hsl(213, 19%, 18%);
+    --color-blue-700: hsl(213, 19%, 13%);
     --color-blue-800: hsl(216, 12%, 8%);
 
     --color-accent: hsl(25, 97%, 53%);
@@ -23,6 +24,7 @@ body{
 
 .rating-component{
     background-color: var(--color-blue-600);
+    background: linear-gradient(0deg, var(--color-blue-700) 0%, var(--color-blue-600) 100%); 
     padding: 2rem;
     border-radius: 2rem;
     max-width: 410px;
@@ -82,6 +84,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition:background-color 150ms ;
 
 }
 
@@ -118,3 +121,32 @@ body{
     color: var(--color-accent);
 }
 
+.hidden {display: none;}
+
+
+.thanks-page{
+    text-align: center;
+}
+
+.thanks-page h3{
+    margin-block: 1rem;
+}
+.thanks-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-block: 1rem;
+}
+
+.ratting-selection span{
+    background-color: var(--color-blue-500);
+    color: var(--color-accent);
+    padding: 0.5em 1em;
+    border-radius: 2rem;
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-block: 1rem;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
