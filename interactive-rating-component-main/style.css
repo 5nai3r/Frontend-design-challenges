@@ -35,10 +35,12 @@ body{
     padding: 0.5rem;
     border-radius: 100%;
     background-color: var(--color-blue-500);
+    margin-bottom: 2rem;
 }
 
 .rating-component h3{
     color: var(--color-white);
+    margin-bottom: 1rem;
 }
 
 .rating-component p{
@@ -49,6 +51,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-block: 1rem;
 }
 
 .rating-selector span {
@@ -70,5 +73,6 @@ body{
     font-size: 1rem;
     padding: 0.5em;
     border-radius: 2rem;
+    margin-top: 1rem;
 }
 
