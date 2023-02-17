@@ -40,7 +40,7 @@ body{
     margin-bottom: 2rem;
 }
 
-.rating-component h1{
+.rating-component h1,.rating-component h2{
     color: var(--color-white);
     margin-bottom: 1rem;
 }
