@@ -54,14 +54,23 @@ body{
     margin-block: 1rem;
 }
 
-.rating-selector span {
-    display: block;
-    width: fit-content;
-    line-height: 1;
+
+.rating-selector div{
+    aspect-ratio: 1/1;
+    height: 3rem;
     background-color: var(--color-blue-500);
     color: var(--color-white);
     padding: 1em;
     border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.rating-selector span {
+
+    line-height: 1;
+
 }
 
 
