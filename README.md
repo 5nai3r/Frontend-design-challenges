@@ -8,5 +8,5 @@ repository for Frontendmentor.io challenges
 - [Time tracking Dashboard (VueJs)](https://5nai3r.github.io/Frontend-design-challenges/time-tracking-dashboard-main/)
 - [QR component](https://5nai3r.github.io/Frontend-design-challenges/qr-code-component-main/)
 - [Fylo data storage component](https://5nai3r.github.io/Frontend-design-challenges/fylo-data-storage-component-master/)
-- [Fylo data storage component](https://5nai3r.github.io/Frontend-design-challenges/interactive-rating-component-main/)
+- [interactive rating component](https://5nai3r.github.io/Frontend-design-challenges/interactive-rating-component-main/)
 
