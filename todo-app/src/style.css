@@ -65,6 +65,13 @@ body {
   background-image: url("../images/icon-cross.svg");
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
+  visibility: hidden;
+  transition: all 150ms ease-in;
+}
+
+.todo-item:hover .delete {
+  visibility: visible;
 }
 
 .todo-item .checkbox {
