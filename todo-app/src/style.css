@@ -81,15 +81,27 @@ body {
 .todo-item .checkbox-icon {
   position: absolute;
   inset: 20px;
+  border: none;
   border-radius: 100%;
-  border: 1px solid var(--todo-border);
+  background: var(--todo-bg);
+  background-clip: padding-box;
+  background: linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
-.todo-item .checkbox input:checked+.checkbox-icon {
+.todo-item .checkbox-icon:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: 1px;
+  border-radius: inherit;
+  background: var(--todo-bg);
+}
+
+.todo-item .checkbox input:checked+.checkbox-icon:after {
+  background: transparent;
   background-image: url("../images/icon-check.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: red;
 }
 
 .todo-item>* {
