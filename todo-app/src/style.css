@@ -92,6 +92,10 @@ body {
   border-radius: 100%;
   background: var(--todo-bg);
   background-clip: padding-box;
+  background: var(--todo-border);
+}
+
+.todo-item .checkbox-icon:hover {
   background: linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
