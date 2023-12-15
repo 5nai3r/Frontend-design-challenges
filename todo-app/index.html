@@ -7,6 +7,9 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <title>Frontend Mentor | Todo app</title>
   <link rel="stylesheet" href="reset.css">
@@ -39,7 +42,7 @@
         <button class="delete"></button>
       </div>
 
-      <div class="todo-item">
+      <div class="todo-item completed">
         <label class="checkbox">
           <input type="checkbox">
           <span class="checkbox-icon"></span>
@@ -60,7 +63,11 @@
 
       <div class="todo-footer">
         <span>5 items left</span>
-        <div class="filter"></div>
+        <div class="filter">
+          <button class="selected">All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
         <button>Clear completed</button>
       </div>
 

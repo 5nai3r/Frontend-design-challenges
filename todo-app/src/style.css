@@ -4,6 +4,10 @@
   --todo-text: hsl(234, 39%, 85%);
   --todo-text-hover: hsl(236, 33%, 92%);
   --todo-border: hsl(233, 14%, 35%);
+  --text-color: hsl(234, 39%, 85%);
+  --text-color-secondary: hsl(235, 19%, 35%);
+  --text-color-hover: hsl(234, 39%, 85%);
+  --text-color-selected: hsl(222, 46%, 55%);
 }
 
 body {
@@ -11,6 +15,8 @@ body {
   background-image: url("../images/bg-desktop-dark.jpg");
   background-repeat: no-repeat;
   background-size: 100% 300px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--text-color)
 }
 
 .app {
@@ -25,6 +31,11 @@ body {
   height: 30px;
   margin-top: 70px;
   margin-bottom: 50px;
+}
+
+.todo-input .todo-item {
+  border-radius: 5px;
+  border: none;
 }
 
 
@@ -47,8 +58,17 @@ body {
   background-position: center;
 }
 
+.darkmode-switch input:checked+.checkbox-icon {
+  background-image: url("../images/icon-moon.svg");
+}
+
+
 .todo-input {
   margin-bottom: 30px;
+}
+
+.todo-list> :first-child {
+  border-radius: 5px 5px 0 0;
 }
 
 .todo-item {
@@ -59,6 +79,11 @@ body {
   background-color: var(--todo-bg);
   border-bottom: 1px solid var(--todo-border);
   color: var(--todo-text);
+}
+
+.todo-item.completed {
+  color: var(--text-color-secondary);
+  text-decoration-line: line-through;
 }
 
 .todo-item .delete {
@@ -90,7 +115,6 @@ body {
   inset: 20px;
   border: none;
   border-radius: 100%;
-  background: var(--todo-bg);
   background-clip: padding-box;
   background: var(--todo-border);
 }
@@ -109,7 +133,7 @@ body {
 }
 
 .todo-item .checkbox input:checked+.checkbox-icon:after {
-  background: transparent;
+  background: linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   background-image: url("../images/icon-check.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -125,14 +149,36 @@ body {
   justify-items: center;
   align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 50px;
 
   background-color: var(--todo-bg);
   border-radius: 0 0 5px 5px;
+
+  color: var(--text-color-secondary);
+  font-size: 0.8rem;
 }
 
-.todo-footer>* {
+.todo-footer .filter {
+  display: flex;
+  justify-content: space-evenly;
+  width: 75%;
+  font-weight: 700;
+}
+
+.todo-footer * {
   background-color: transparent;
   all: unset;
+}
+
+.filter .selected {
+  color: var(--text-color-selected);
+}
+
+.todo-footer button {
+  cursor: pointer;
+}
+
+.todo-footer button:hover {
+  color: var(--text-color-hover);
 }
