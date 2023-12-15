@@ -81,7 +81,8 @@ body {
   color: var(--todo-text);
 }
 
-.todo-item.completed {
+
+.todo-item:has(input:checked) {
   color: var(--text-color-secondary);
   text-decoration-line: line-through;
 }
