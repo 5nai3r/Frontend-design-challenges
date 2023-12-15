@@ -1,30 +1,63 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import TodoItem from './components/TodoItem.vue';
+import TodoFooter from './components/TodoFooter.vue';
+import TodoHeader from './components/TodoHeader.vue';
+import TodoAdder from './components/TodoAdder.vue';
+export default {
+
+  data() {
+    return {
+      todoList: [
+        { label: "todo one", completed: true },
+        { label: "todo two", completed: false },
+      ]
+    }
+  },
+  components: {
+    TodoItem: TodoItem,
+    TodoFooter: TodoFooter,
+    TodoHeader: TodoHeader,
+    TodoAdder: TodoAdder,
+  },
+  methods: {
+    handleAddTodo(todo) {
+      this.todoList.push(todo)
+    }
+  }
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-     
-    </a>
+  <div class="app">
+    <TodoHeader />
+    <div class="todo-input">
+      <TodoAdder @AddTodo="handleAddTodo" />
+    </div>
+    <div class="todo-list">
+      <div v-for="(, i) in todoList">
+        <TodoItem v-model="todoList[i]" />
+      </div>
+      <TodoFooter />
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.app {
+  width: 480px;
+  margin: 0 auto;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.todo-input .todo-item {
+  border-radius: 5px;
+  border: none;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.todo-input {
+  margin-bottom: 30px;
+}
+
+.todo-list> :first-child {
+  border-radius: 5px 5px 0 0;
 }
 </style>
