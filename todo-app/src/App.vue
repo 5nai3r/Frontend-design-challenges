@@ -10,7 +10,8 @@ export default {
       todoList: [
         { label: "todo one", completed: true },
         { label: "todo two", completed: false },
-      ]
+      ],
+      filter: "All",
     }
   },
   components: {
@@ -22,9 +23,36 @@ export default {
   methods: {
     handleAddTodo(todo) {
       this.todoList.push(todo)
+    },
+    handleDeleteTodo(i: number) {
+      this.todoList.splice(i, 1)
+    },
+    clearCompleted() {
+      this.todoList = this.todoList.filter(item => !item.completed);
+    },
+    handleFilter(filter: string) {
+      this.filter = filter
+    },
+    isShown(i: number) {
+      if (this.filter == 'Completed') {
+        return this.todoList[i].completed
+      } else if (this.filter == 'Active') {
+        return !this.todoList[i].completed
+      } else {
+        return true
+      }
     }
+
+
+  },
+
+  computed: {
+    remainingTodo() {
+      return this.todoList.filter(item => !item.completed).length;
+    },
   }
 }
+
 </script>
 
 <template>
@@ -34,10 +62,10 @@ export default {
       <TodoAdder @AddTodo="handleAddTodo" />
     </div>
     <div class="todo-list">
-      <div v-for="(, i) in todoList">
-        <TodoItem v-model="todoList[i]" />
+      <div v-for="(todo, i) in todoList" :key="i">
+        <TodoItem v-model="todoList[i]" v-if="isShown(i)" :item-index="i" @delete="handleDeleteTodo" />
       </div>
-      <TodoFooter />
+      <TodoFooter :remaining="remainingTodo" @ClearCompleted="clearCompleted" :filter="filter" @Filter="handleFilter" />
     </div>
   </div>
 </template>

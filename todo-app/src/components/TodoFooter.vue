@@ -1,19 +1,25 @@
 <script lang="ts">
 
 export default {
-
+    props: ['remaining', 'filter'],
+    emits: ["Filter", "ClearCompleted"],
+    methods: {
+        emitFilter(filter: string) {
+            this.$emit("Filter", filter)
+        }
+    }
 }
 </script>
 
 <template>
     <div class="todo-footer">
-        <span>5 items left</span>
+        <span>{{ remaining }} items left</span>
         <div class="filter">
-            <button class="selected">All</button>
-            <button>Active</button>
-            <button>Completed</button>
+            <button @click="emitFilter('All')" :class="{ selected: filter === 'All' }">All</button>
+            <button @click="emitFilter('Active')" :class="{ selected: filter === 'Active' }">Active</button>
+            <button @click="emitFilter('Completed')" :class="{ selected: filter === 'Completed' }">Completed</button>
         </div>
-        <button>Clear completed</button>
+        <button @click="$emit('ClearCompleted')">Clear completed</button>
     </div>
 </template>
 
