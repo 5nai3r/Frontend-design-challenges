@@ -51,7 +51,19 @@ export default {
       }
     }
   },
-
+  mounted() {
+    if (localStorage.todoList) {
+      this.todoList = JSON.parse(localStorage.todoList)
+    }
+  },
+  watch: {
+    todoList: {
+      handler(newValue) {
+        localStorage.todoList = JSON.stringify(newValue);
+      },
+      deep: true
+    }
+  },
   computed: {
     remainingTodo() {
       return this.todoList.filter(item => !item.completed).length;
