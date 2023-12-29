@@ -38,6 +38,7 @@ export default {
 <style scoped>
 .todo-item {
     width: 100%;
+    margin-top: 45px;
     display: grid;
     grid-template-columns: 13% auto 13%;
     grid-template-rows: 60px;

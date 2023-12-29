@@ -1,7 +1,8 @@
 <script lang="ts">
 
 export default {
-
+    props: ['modelValue'],
+    emits: ['update:modelValue']
 }
 </script>
 
@@ -9,7 +10,8 @@ export default {
     <header>
         <h1>TODO</h1>
         <label for="darkModeToggle" class="darkmode-switch">
-            <input type="checkbox" id="darkModeToggle">
+            <input type="checkbox" id="darkModeToggle" :checked="modelValue"
+                @change="$emit('update:modelValue', $event.target.checked)">
             <span class="checkbox-icon"></span>
         </label>
     </header>
@@ -21,8 +23,8 @@ header {
     grid-template-columns: auto 40px;
     grid-template-rows: 40px;
     height: 30px;
-    margin-top: 70px;
-    margin-bottom: 50px;
+    padding-top: 70px;
+    padding-bottom: 45px;
 }
 
 .darkmode-switch {

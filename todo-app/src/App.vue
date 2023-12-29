@@ -17,6 +17,7 @@ export default {
         { id: uuidv4(), label: "todo two", completed: false },
       ],
       filter: "All",
+      lightTheme: false,
     }
   },
   components: {
@@ -49,8 +50,6 @@ export default {
         return true
       }
     }
-
-
   },
 
   computed: {
@@ -63,26 +62,34 @@ export default {
 </script>
 
 <template>
-  <div class="app">
-    <TodoHeader />
-    <div class="todo-input">
-      <TodoAdder @AddTodo="handleAddTodo" />
-    </div>
+  <div :data-theme="lightTheme ? 'light' : 'dark'">
+    <div class="app">
+      <TodoHeader v-model="lightTheme" />
+      <div class="todo-input">
+        <TodoAdder @AddTodo="handleAddTodo" />
+      </div>
 
-    <div class="todo-list">
-      <draggable v-model="todoList" item-key="id">
-        <template #item="{ element: todo }">
-          <TodoItem :item-data="todo" v-if="isShown(todo)" @delete="handleDeleteTodo" />
-        </template>
-      </draggable>
-      <TodoFooter :remaining="remainingTodo" @ClearCompleted="clearCompleted" :filter="filter" @Filter="handleFilter" />
+      <div class="todo-list">
+        <draggable v-model="todoList" item-key="id">
+          <template #item="{ element: todo }">
+            <TodoItem :item-data="todo" v-if="isShown(todo)" @delete="handleDeleteTodo" />
+          </template>
+        </draggable>
+        <TodoFooter :remaining="remainingTodo" @ClearCompleted="clearCompleted" :filter="filter" @Filter="handleFilter" />
+      </div>
     </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="mailto:ismail.monsieur495@aleeas.com">C. ismail</a>.
   </div>
 </template>
 
 <style scoped>
 .app {
-  width: 480px;
+  max-width: 530px;
+  padding-inline: 25px;
   margin: 0 auto;
 }
 
@@ -93,6 +100,11 @@ export default {
 
 .todo-input {
   margin-bottom: 30px;
+}
+
+
+.todo-list {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .todo-list> :first-child {
