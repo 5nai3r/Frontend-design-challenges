@@ -1,8 +1,8 @@
 <script lang="ts">
 
 export default {
-    props: ['modelValue', "itemIndex"],
-    emits: ['update:modelValue', "delete"],
+    props: ["itemData"],
+    emits: ["delete"],
 
     data() {
         return {
@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         emitDelete() {
-            this.$emit("delete", this.itemIndex)
+            this.$emit("delete", this.itemData)
         }
     }
 
@@ -21,10 +21,10 @@ export default {
 <template>
     <div class="todo-item">
         <label class="checkbox">
-            <input type="checkbox" v-model="modelValue.completed">
+            <input type="checkbox" v-model="itemData.completed">
             <span class="checkbox-icon"></span>
         </label>
-        <input type="text" class="text" v-model="modelValue.label">
+        <input type="text" class="text" v-model="itemData.label">
         <button class="delete" @click="emitDelete"></button>
     </div>
 </template>

@@ -1,4 +1,6 @@
 <script lang="ts">
+import { TodoItemType } from '../types';
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
     data() {
@@ -13,7 +15,8 @@ export default {
     methods: {
         emitAddTodo() {
             if (this.todo.label.length == 0) return;
-            this.$emit('AddTodo', JSON.parse(JSON.stringify(this.todo)))
+            const newTodo: TodoItemType = { id: uuidv4(), ...this.todo };
+            this.$emit('AddTodo', JSON.parse(JSON.stringify(newTodo)))
             this.todo.label = "";
             this.todo.completed = false;
         }

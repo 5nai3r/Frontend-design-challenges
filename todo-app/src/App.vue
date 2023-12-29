@@ -3,13 +3,18 @@ import TodoItem from './components/TodoItem.vue';
 import TodoFooter from './components/TodoFooter.vue';
 import TodoHeader from './components/TodoHeader.vue';
 import TodoAdder from './components/TodoAdder.vue';
+import draggable from 'vuedraggable';
+import { v4 as uuidv4 } from 'uuid';
+import { TodoItemType } from './types'
+
+
 export default {
 
   data() {
     return {
       todoList: [
-        { label: "todo one", completed: true },
-        { label: "todo two", completed: false },
+        { id: uuidv4(), label: "todo one", completed: true },
+        { id: uuidv4(), label: "todo two", completed: false },
       ],
       filter: "All",
     }
@@ -19,13 +24,15 @@ export default {
     TodoFooter: TodoFooter,
     TodoHeader: TodoHeader,
     TodoAdder: TodoAdder,
+    draggable: draggable,
   },
   methods: {
-    handleAddTodo(todo) {
+    handleAddTodo(todo: TodoItemType) {
       this.todoList.push(todo)
     },
-    handleDeleteTodo(i: number) {
-      this.todoList.splice(i, 1)
+    handleDeleteTodo(todo: TodoItemType) {
+      const findIndex = this.todoList.findIndex(a => a.id === todo.id)
+      findIndex !== -1 && this.todoList.splice(findIndex, 1)
     },
     clearCompleted() {
       this.todoList = this.todoList.filter(item => !item.completed);
@@ -33,11 +40,11 @@ export default {
     handleFilter(filter: string) {
       this.filter = filter
     },
-    isShown(i: number) {
+    isShown(todo: TodoItemType) {
       if (this.filter == 'Completed') {
-        return this.todoList[i].completed
+        return todo.completed
       } else if (this.filter == 'Active') {
-        return !this.todoList[i].completed
+        return !todo.completed
       } else {
         return true
       }
@@ -61,10 +68,13 @@ export default {
     <div class="todo-input">
       <TodoAdder @AddTodo="handleAddTodo" />
     </div>
+
     <div class="todo-list">
-      <div v-for="(todo, i) in todoList" :key="i">
-        <TodoItem v-model="todoList[i]" v-if="isShown(i)" :item-index="i" @delete="handleDeleteTodo" />
-      </div>
+      <draggable v-model="todoList" item-key="id">
+        <template #item="{ element: todo }">
+          <TodoItem :item-data="todo" v-if="isShown(todo)" @delete="handleDeleteTodo" />
+        </template>
+      </draggable>
       <TodoFooter :remaining="remainingTodo" @ClearCompleted="clearCompleted" :filter="filter" @Filter="handleFilter" />
     </div>
   </div>

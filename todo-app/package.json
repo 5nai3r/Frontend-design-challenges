@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.8"
+    "uuid": "^9.0.1",
+    "vue": "^3.3.8",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.7",
     "@vitejs/plugin-vue": "^4.5.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
