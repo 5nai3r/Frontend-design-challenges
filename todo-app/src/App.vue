@@ -3,6 +3,7 @@ import TodoItem from './components/TodoItem.vue';
 import TodoFooter from './components/TodoFooter.vue';
 import TodoHeader from './components/TodoHeader.vue';
 import TodoAdder from './components/TodoAdder.vue';
+import TodoFooterMobile from './components/TodoFooterMobile.vue';
 import draggable from 'vuedraggable';
 import { v4 as uuidv4 } from 'uuid';
 import { TodoItemType } from './types'
@@ -26,6 +27,7 @@ export default {
     TodoHeader: TodoHeader,
     TodoAdder: TodoAdder,
     draggable: draggable,
+    TodoFooterMobile
   },
   methods: {
     handleAddTodo(todo: TodoItemType) {
@@ -88,6 +90,7 @@ export default {
           </template>
         </draggable>
         <TodoFooter :remaining="remainingTodo" @ClearCompleted="clearCompleted" :filter="filter" @Filter="handleFilter" />
+        <TodoFooterMobile :filter="filter" @Filter="handleFilter" />
       </div>
 
       <div class="hint-text">
@@ -119,9 +122,7 @@ export default {
 }
 
 
-.todo-list {
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-}
+.todo-list {}
 
 .todo-list> :first-child {
   border-radius: 5px 5px 0 0;

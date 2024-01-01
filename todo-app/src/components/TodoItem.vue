@@ -72,7 +72,11 @@ export default {
 
 .todo-item .checkbox-icon {
     position: absolute;
-    inset: 20px;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: none;
     border-radius: 100%;
     background-clip: padding-box;
