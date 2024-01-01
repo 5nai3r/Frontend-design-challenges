@@ -21,11 +21,11 @@ export default {
 <template>
     <div class="todo-item">
         <label class="checkbox">
-            <input type="checkbox" v-model="itemData.completed">
+            <input aria-label="toggle" type="checkbox" v-model="itemData.completed">
             <span class="checkbox-icon"></span>
         </label>
-        <input type="text" class="text" v-model="itemData.label">
-        <button class="delete" @click="emitDelete"></button>
+        <input aria-label="todo-text" type="text" class="text" v-model="itemData.label">
+        <button aria-label="delete" class="delete" @click="emitDelete"></button>
     </div>
 </template>
 

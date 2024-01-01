@@ -10,7 +10,7 @@ export default {
     <header>
         <h1>TODO</h1>
         <label for="darkModeToggle" class="darkmode-switch">
-            <input type="checkbox" id="darkModeToggle" :checked="modelValue"
+            <input aria-label="switch-theme" type="checkbox" id="darkModeToggle" :checked="modelValue"
                 @change="$emit('update:modelValue', ($event.target as HTMLInputElement)?.checked)">
             <span class="checkbox-icon"></span>
         </label>
