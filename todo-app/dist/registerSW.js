@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Frontend-design-challenges/todo-app/dis/sw.js', { scope: '/Frontend-design-challenges/todo-app/dis/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Frontend-design-challenges/todo-app/dist/sw.js', { scope: '/Frontend-design-challenges/todo-app/dist/' })})}

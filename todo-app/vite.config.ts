@@ -37,5 +37,5 @@ export default defineConfig({
       ]
     }
   })],
-  base: '/Frontend-design-challenges/todo-app/dis/',
+  base: '/Frontend-design-challenges/todo-app/dist/',
 })
