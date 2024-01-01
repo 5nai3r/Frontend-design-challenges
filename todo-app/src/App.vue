@@ -122,7 +122,6 @@ export default {
 }
 
 
-.todo-list {}
 
 .todo-list> :first-child {
   border-radius: 5px 5px 0 0;

@@ -31,7 +31,7 @@ export default {
             <input aria-label='toggle' type="checkbox" v-model="todo.completed">
             <span class="checkbox-icon"></span>
         </label>
-        <input aria-label="add" type="text" class="text" v-model="todo.label" @keyup.enter="emitAddTodo">
+        <input aria-label="add" type="text" class="text" inputmode="text" v-model="todo.label" @keyup.enter="emitAddTodo">
     </div>
 </template>
 
