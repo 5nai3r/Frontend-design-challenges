@@ -18,6 +18,11 @@ export default defineConfig({
           sizes: '512x512',
           type: 'image/png',
         },
+        {
+          src: '/Frontend-design-challenges/todo-app/dist/icon.png',
+          sizes: '128x128',
+          type: 'image/png',
+        },
       ]
     },
     workbox: {
