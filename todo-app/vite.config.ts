@@ -24,11 +24,11 @@ export default defineConfig({
       runtimeCaching: [
         {
           urlPattern: ({ url }) => {
-            return url.pathname.includes('.svg')
+            return (url.pathname.includes('.svg') || url.pathname.includes('.jpg') || url.pathname.includes('.png'))
           },
           handler: 'CacheFirst',
           options: {
-            cacheName: 'svg-icons',
+            cacheName: 'images',
             cacheableResponse: {
               statuses: [0, 200]
             }
