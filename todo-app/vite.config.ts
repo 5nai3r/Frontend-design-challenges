@@ -22,6 +22,7 @@ export default defineConfig({
           src: '/Frontend-design-challenges/todo-app/dist/icon.png',
           sizes: '512x512',
           type: 'image/png',
+          purpose: 'any'
         },
       ]
     },
