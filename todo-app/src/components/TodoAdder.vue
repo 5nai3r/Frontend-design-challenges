@@ -19,6 +19,7 @@ export default {
             this.$emit('AddTodo', JSON.parse(JSON.stringify(newTodo)))
             this.todo.label = "";
             this.todo.completed = false;
+            (document.activeElement as HTMLElement).blur()
         }
     }
 

@@ -12,6 +12,9 @@ export default {
     methods: {
         emitDelete() {
             this.$emit("delete", this.itemData)
+        },
+        unfocus() {
+            (document.activeElement as HTMLElement).blur()
         }
     }
 
@@ -24,7 +27,8 @@ export default {
             <input aria-label="toggle" type="checkbox" v-model="itemData.completed">
             <span class="checkbox-icon"></span>
         </label>
-        <input aria-label="todo-text" type="text" inputmode="text" class="text" v-model="itemData.label">
+        <input aria-label="todo-text" type="text" inputmode="text" class="text" v-model="itemData.label"
+            @keyup.enter="unfocus">
         <button aria-label="delete" class="delete" @click="emitDelete"></button>
     </div>
 </template>
