@@ -9,21 +9,11 @@ export default defineConfig({
     manifest: {
       icons: [
         {
-          src: '/icon.png',
-          sizes: '32x32',
-          type: 'image/png',
-        },
-        {
-          src: '/icon.png',
-          sizes: '512x512',
-          type: 'image/png',
-        },
-        {
           src: '/Frontend-design-challenges/todo-app/dist/icon.png',
           sizes: '512x512',
           type: 'image/png',
           purpose: 'any'
-        },
+        }
       ]
     },
     workbox: {
