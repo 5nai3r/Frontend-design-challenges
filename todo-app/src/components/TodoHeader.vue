@@ -11,7 +11,7 @@ export default {
         <h1>TODO</h1>
         <label for="darkModeToggle" class="darkmode-switch">
             <input type="checkbox" id="darkModeToggle" :checked="modelValue"
-                @change="$emit('update:modelValue', $event.target.checked)">
+                @change="$emit('update:modelValue', ($event.target as HTMLInputElement)?.checked)">
             <span class="checkbox-icon"></span>
         </label>
     </header>
@@ -41,12 +41,12 @@ header {
 .darkmode-switch .checkbox-icon {
     position: absolute;
     inset: 0;
-    background-image: url("../images/icon-sun.svg");
+    background-image: url("/icon-sun.svg");
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .darkmode-switch input:checked+.checkbox-icon {
-    background-image: url("../images/icon-moon.svg");
+    background-image: url("/icon-moon.svg");
 }
 </style>

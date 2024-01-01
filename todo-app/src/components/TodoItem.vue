@@ -47,7 +47,7 @@ export default {
 }
 
 .todo-item .delete {
-    background-image: url("../images/icon-cross.svg");
+    background-image: url("/icon-cross.svg");
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
@@ -93,7 +93,7 @@ export default {
 }
 
 .todo-item .checkbox input:checked+.checkbox-icon:after {
-    background: url('../images/icon-check.svg'), linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background: url('/icon-check.svg'), linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -1,6 +1,6 @@
 :root {
   --body-bg: hsl(235, 21%, 11%);
-  --body-bg-img: url("../images/bg-desktop-dark.jpg");
+  --body-bg-img: url("/bg-desktop-dark.jpg");
   --todo-bg: hsl(235, 24%, 19%);
   --todo-text: hsl(234, 39%, 85%);
   --todo-text-hover: hsl(236, 33%, 92%);
@@ -13,7 +13,7 @@
 
 [data-theme="light"] {
   --body-bg: hsl(0, 0%, 98%);
-  --body-bg-img: url("../images/bg-desktop-light.jpg");
+  --body-bg-img: url("/bg-desktop-light.jpg");
   --todo-bg: hsl(0, 0%, 100%);
   --todo-text: hsl(235, 19%, 35%);
   --todo-text-hover: hsl(236, 33%, 92%);
