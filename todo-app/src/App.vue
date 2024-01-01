@@ -89,6 +89,10 @@ export default {
         </draggable>
         <TodoFooter :remaining="remainingTodo" @ClearCompleted="clearCompleted" :filter="filter" @Filter="handleFilter" />
       </div>
+
+      <div class="hint-text">
+        <span>Drag and drop to reorder list</span>
+      </div>
     </div>
   </div>
 
@@ -121,5 +125,10 @@ export default {
 
 .todo-list> :first-child {
   border-radius: 5px 5px 0 0;
+}
+
+.hint-text {
+  margin-top: 60px;
+  text-align: center;
 }
 </style>
