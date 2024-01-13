@@ -16,10 +16,44 @@
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
     rel="stylesheet">
 
+
+  <script src="./js/app.js" defer></script>
+
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 
-<body>
+<body class="home">
+
+  <header class="primary-header flex">
+    <img src="./assets/shared/logo.svg" alt="logo" class="logo">
+    <div>
+      <nav>
+        <ul class="primary-navigation underline-indicators flex">
+          <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>home</a>
+          <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Destination</a>
+          <li><a class="uppercase text-white letter-spacing-2" href="#"><span>03</span>crew</a>
+          <li><a class="uppercase text-white letter-spacing-2" href="#"><span>03</span>technology</a>
+        </ul>
+      </nav>
+    </div>
+    <button class="nav-toggle"><span class="sr-only">Menu</span></button>
+  </header>
+
+
+  <main id="main" class="grid-container grid-container--home">
+    <div>
+      <p class="text-accent fs-500 uppercase letter-spacing-1 ff-sans-normal">So, you want to travel to</p>
+      <p class="fs-900 ff-serif uppercase">SPACE</p>
+
+      <p class="text-accent ff-sans-normal">Let’s face it; if you want to go to space, you might as well genuinely go to
+        outer space and not hover kind of on the edge of it. Well sit back, and relax
+        because we’ll give you a truly out of this world experience! </p>
+    </div>
+    <div>
+      <a href="destination.html" class="large-button uppercase ff-serif text-dark bg-white fs-600">Explore</a>
+    </div>
+  </main>
+
 
 
 
