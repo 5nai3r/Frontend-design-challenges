@@ -359,6 +359,25 @@ body {
     }
 }
 
+/* crew */
+.crew {
+    background-image: url(../assets/crew/background-crew-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+    .crew {
+        background-position: center center;
+        background-image: url(../assets/crew/background-crew-tablet.jpg);
+    }
+}
+
+@media (min-width: 48.1em) {
+    .crew {
+        background-image: url(../assets/crew/background-crew-desktop.jpg);
+    }
+}
+
+
 
 
 /*---------------*/
@@ -381,6 +400,7 @@ body {
     grid-area: title;
 }
 
+/* destination page */
 .grid-container--destination {
     grid-template-areas:
         'title'
@@ -409,7 +429,30 @@ body {
     margin-top: 2.5rem;
 }
 
-@media (max-width: 45em) {
+/* crew page */
+.grid-container--crew {
+    grid-template-areas:
+        'title'
+        'image'
+        'tabs'
+        'content';
+}
+
+.grid-container--crew>img {
+    grid-area: image;
+    max-width: 60%;
+    border-bottom: 1px solid hsl(var(--clr-white) / .1);
+}
+
+.grid-container--crew>.dot-indicators {
+    grid-area: tabs;
+}
+
+.grid-container--crew>.crew-info {
+    grid-area: content;
+}
+
+@media (max-width: 48em) {
     .grid-container--home {
         grid-template-rows: 10vh 1fr 1fr 10vh;
         padding-bottom: 0;
@@ -423,6 +466,28 @@ body {
     .grid-container--home>*:last-child {
         grid-row: 3;
         align-self: end;
+    }
+
+}
+
+@media (min-width: 35em) {
+    .numbered-title {
+        justify-self: start;
+        margin-top: 2rem;
+    }
+
+    .destination-meta {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .grid-container--crew {
+        padding-bottom: 0;
+        grid-template-areas:
+            'title'
+            'content'
+            'tabs'
+            'image';
     }
 
 }
@@ -461,18 +526,17 @@ body {
         text-align: left;
         padding-left: 15vw;
     }
-}
 
 
-
-@media (min-width: 35em) {
-    .numbered-title {
-        justify-self: start;
-        margin-top: 2rem;
+    .grid-container--crew {
+        grid-template-areas:
+            '. title title .'
+            '. content image .'
+            '. tabs image .';
     }
 
-    .destination-meta {
-        flex-direction: row;
-        justify-content: space-evenly;
+    .grid-container--crew>img {
+        max-width: 100%;
+        align-self: end;
     }
 }
