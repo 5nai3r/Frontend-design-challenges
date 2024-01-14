@@ -114,6 +114,10 @@ body {
     color: hsl(var(--clr-white));
 }
 
+.text-accent--white {
+    color: hsl(var(--clr-white) / .5);
+}
+
 
 
 /* ------------------- */
@@ -496,10 +500,16 @@ body {
     .grid-container--home {
         grid-template-columns: 7.5% repeat(2, 1fr) 7.5%;
         text-align: left;
+        padding-bottom: 14vh;
     }
 
     .grid-container--home>*:first-child {
         grid-column: 2;
+        align-self: end;
+    }
+
+    .grid-container--home .fs-900 {
+        margin-block: 1.5rem;
     }
 
     .grid-container--home>*:last-child {
