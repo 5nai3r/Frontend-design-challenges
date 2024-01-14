@@ -41,10 +41,22 @@
 
     <h1 class="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
 
-    <img src="assets/destination/image-moon.png" alt="the moon" data-id="1">
-    <img src="assets/destination/image-mars.png" alt="the planet mars" data-id="2" hidden>
-    <img src="assets/destination/image-europa.png" alt="the planet europa" data-id="3" hidden>
-    <img src="assets/destination/image-titan.png" alt="the plantet titan" data-id="4" hidden>
+    <picture data-id="1">
+      <source srcset="assets/destination/image-moon.webp" type="image/webp">
+      <img src="assets/destination/image-moon.png" alt="the moon" loading="lazy">
+    </picture>
+    <picture data-id="2" hidden>
+      <source srcset="assets/destination/image-mars.webp" type="image/webp">
+      <img src="assets/destination/image-mars.png" alt="the planet mars" loading="lazy">
+    </picture>
+    <picture data-id="3" hidden>
+      <source srcset="assets/destination/image-europa.webp" type="image/webp">
+      <img src="assets/destination/image-europa.png" alt="the planet europa" loading="lazy">
+    </picture>
+    <picture data-id="4" hidden>
+      <source srcset="assets/destination/image-titan.webp" type="image/webp">
+      <img src="assets/destination/image-titan.png" alt="the plantet titan" loading="lazy">
+    </picture>
 
     <div class="tab-list underline-indicators flex">
       <button class="selected uppercase ff-sans-cond text-accent bg-transparent letter-spacing-2"

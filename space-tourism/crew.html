@@ -41,10 +41,22 @@
 
     <h1 class="numbered-title"><span aria-hidden="true">02</span> meet your crew</h1>
 
-    <img src="assets/crew/image-douglas-hurley.png" data-id="1" alt="">
-    <img src="assets/crew/image-anousheh-ansari.png" data-id="2" alt="" hidden>
-    <img src="assets/crew/image-victor-glover.png" data-id="3" alt="" hidden>
-    <img src="assets/crew/image-mark-shuttleworth.png" data-id="4" alt="" hidden>
+    <picture data-id="1">
+      <source srcset="assets/crew/image-douglas-hurley.webp" type="image/webp">
+      <img src="assets/crew/image-douglas-hurley.png" alt="" loading="lazy">
+    </picture>
+    <picture data-id="2" hidden>
+      <source srcset="assets/crew/image-anousheh-ansari.webp" type="image/webp">
+      <img src="assets/crew/image-anousheh-ansari.png" alt="" loading="lazy">
+    </picture>
+    <picture data-id="3" hidden>
+      <source srcset="assets/crew/image-victor-glover.webp" type="image/webp">
+      <img src="assets/crew/image-victor-glover.png" alt="" loading="lazy">
+    </picture>
+    <picture data-id="4" hidden>
+      <source srcset="assets/crew/image-mark-shuttleworth.webp" type="image/webp">
+      <img src="assets/crew/image-mark-shuttleworth.png" alt="" loading="lazy">
+    </picture>
 
     <div class="dot-indicators flex">
       <button class="selected" data-id="1"></button>
