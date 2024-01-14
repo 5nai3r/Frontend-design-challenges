@@ -41,25 +41,53 @@
 
     <h1 class="numbered-title"><span aria-hidden="true">02</span> meet your crew</h1>
 
-    <img src="assets/crew/image-douglas-hurley.png" alt="the moon">
+    <img src="assets/crew/image-douglas-hurley.png" data-id="1" alt="">
+    <img src="assets/crew/image-anousheh-ansari.png" data-id="2" alt="" hidden>
+    <img src="assets/crew/image-victor-glover.png" data-id="3" alt="" hidden>
+    <img src="assets/crew/image-mark-shuttleworth.png" data-id="4" alt="" hidden>
 
     <div class="dot-indicators flex">
-      <button class="selected"></button>
-      <button></button>
-      <button></button>
-      <button></button>
+      <button class="selected" data-id="1"></button>
+      <button data-id="2"></button>
+      <button data-id="3"></button>
+      <button data-id="4"></button>
     </div>
 
-    <article class="crew-info">
-
+    <article class="crew-info" data-id="1">
       <p class="fs-500 uppercase ff-serif text-accent--white">Commander</p>
       <h2 class="fs-700 uppercase ff-serif">Douglas Hurley</h2>
-
       <p class="text-accent fs-400">See our planet as you’ve never seen it before. A perfect relaxing trip away to help
         regain perspective and come back refreshed. While you’re there, take in some history
         by visiting the Luna 2 and Apollo 11 landing sites.</p>
-
     </article>
+
+    <article class="crew-info" data-id="2" hidden>
+      <p class="fs-500 uppercase ff-serif text-accent--white">Flight Engineer</p>
+      <h2 class="fs-700 uppercase ff-serif">Anousheh Ansari</h2>
+      <p class="text-accent fs-400">Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems.
+        Ansari was the fourth self-funded space tourist, the first self-funded woman to
+        fly to the ISS, and the first Iranian in space.</p>
+    </article>
+
+    <article class="crew-info" data-id="3" hidden>
+      <p class="fs-500 uppercase ff-serif text-accent--white">Pilot</p>
+      <h2 class="fs-700 uppercase ff-serif">Victor Glover</h2>
+      <p class="text-accent fs-400"> Pilot on the first operational flight of the SpaceX Crew Dragon to the
+        International Space Station. Glover is a commander in the U.S. Navy where
+        he pilots an F/A-18.He was a crew member of Expedition 64, and served as a
+        station systems flight engineer. </p>
+    </article>
+
+    <article class="crew-info" data-id="4" hidden>
+      <p class="fs-500 uppercase ff-serif text-accent--white">Mission Specialist</p>
+      <h2 class="fs-700 uppercase ff-serif">Mark Shuttleworth</h2>
+      <p class="text-accent fs-400">Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind
+        the Linux-based Ubuntu operating system. Shuttleworth became the first South
+        African to travel to space as a space tourist.</p>
+    </article>
+
+
+
   </main>
 
 </body>
