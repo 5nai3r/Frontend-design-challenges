@@ -430,7 +430,7 @@ body {
 
 /* destination page */
 .grid-container--destination {
-    grid-template-rows: auto 60vw auto auto;
+    grid-template-rows: 6rem 60vw 6rem auto;
     grid-template-areas:
         'title'
         'image'
