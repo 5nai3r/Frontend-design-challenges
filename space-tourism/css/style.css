@@ -485,6 +485,7 @@ body {
 
 /* technology page */
 .grid-container--technology {
+    grid-template-rows: 5rem 41vw 6rem auto;
     padding-inline: 0;
     grid-template-areas:
         'title'
@@ -507,6 +508,7 @@ body {
 .grid-container--technology>.technology-info {
     grid-area: content;
     padding-inline: 1.5rem;
+    align-self: start;
 }
 
 .grid-container--technology .fs-700 {
@@ -555,6 +557,10 @@ body {
 
     .grid-container--crew picture {
         align-self: end;
+    }
+
+    .grid-container--technology {
+        grid-template-rows: 8rem 41vw 9rem auto;
     }
 
     .grid-container--technology .numbered-title {
@@ -633,10 +639,12 @@ body {
     .grid-container--technology .number-indicators {
         --indicators-size: 2rem;
         flex-flow: column;
+        align-self: start;
     }
 
     .grid-container--technology {
         grid-template-columns: 7.5% 5rem repeat(2, 1fr) 7.5%;
+        grid-template-rows: auto auto;
         text-align: left;
         padding-bottom: 14vh;
         grid-template-areas:
