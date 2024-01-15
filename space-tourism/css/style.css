@@ -430,6 +430,7 @@ body {
 
 /* destination page */
 .grid-container--destination {
+    grid-template-rows: auto 60vw auto auto;
     grid-template-areas:
         'title'
         'image'
@@ -583,6 +584,7 @@ body {
 
 
     .grid-container--destination {
+        grid-template-rows: auto 5rem 1fr;
         grid-template-areas:
             '. title title .'
             '. image tabs .'
