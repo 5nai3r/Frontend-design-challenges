@@ -1,0 +1,53 @@
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+
+header {
+    height: 70px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+    padding: 1.75rem;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.count {
+    display: flex;
+    max-width: 375px;
+    min-width: 150px;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.count div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (min-width :35rem) {
+    main {
+        flex-direction: row;
+    }
+
+    .price {
+        flex-direction: column;
+    }
+
+    .purchase {
+        display: flex;
+    }
+}
