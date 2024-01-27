@@ -50,7 +50,103 @@ body {
 }
 
 header {
-    height: 70px;
+    padding-inline: 1rem;
+    max-width: 74rem;
+    min-height: 4rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--clr-primary-100);
+}
+
+
+
+.nav-links {
+    display: inline-flex;
+}
+
+.nav-links {
+    position: fixed;
+    z-index: 50;
+    inset: 0 30% 0 0;
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 500ms ease-in-out;
+
+    background-color: #fff;
+
+}
+
+[data-expanded="true"] .nav-links {
+    transform: translateX(0);
+}
+
+.logo {
+    padding-left: 2rem;
+}
+
+li {
+    all: unset;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-block: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+
+li:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    border-bottom: 4px solid hsl(26, 100%, 55%);
+    box-sizing: border-box;
+    transition: all .3s;
+}
+
+.nav-links li:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+#nav-toggle {
+    all: unset;
+    display: inline;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5rem;
+    z-index: 2000;
+}
+
+.right-header {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+#cart {
+    cursor: pointer;
+}
+
+#avatar {
+    width: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: outline 100ms ease-in-out;
+}
+
+#avatar:hover {
+    outline: 3px solid var(--clr-accent-500);
 }
 
 
@@ -204,6 +300,36 @@ main {
 }
 
 @media (min-width :35rem) {
+    header {
+        margin-bottom: 5rem;
+    }
+
+    #nav-toggle {
+        display: none;
+    }
+
+    .logo {
+        padding-left: 0;
+        padding-right: 2rem;
+    }
+
+    .nav-links {
+        all: unset;
+        display: inline-flex;
+        gap: 2rem;
+        height: 7rem;
+    }
+
+    .nav-links li {
+        font-weight: 400;
+        margin-block: 0;
+        display: flex;
+    }
+
+    #avatar {
+        width: 3rem;
+    }
+
     main {
         flex-direction: row;
     }

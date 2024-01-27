@@ -14,20 +14,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="app.js" defer></script>
+  <script src="carousel.js" defer></script>
 
 </head>
 
 <body>
 
   <header>
-    <nav>
-    </nav>
+    <div>
+      <nav>
+        <button id="nav-toggle"><img src="./images/icon-menu.svg" alt=""></button>
+        <span class="logo fw-700 fs-900">sneakers</span>
+        <ul class="nav-links">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="right-header">
+      <img id="cart" src="./images/icon-cart.svg" alt="">
+      <img id="avatar" src="./images/image-avatar.png" alt="">
+    </div>
   </header>
   <main>
     <div class="picture">
-
       <div class="image-container">
-        <img src="./images/image-product-1.jpg" alt="">
+        <img id='imageContainer' src="./images/image-product-1.jpg" alt="">
         <button class="next"><img src="./images/icon-next.svg" alt=""></button>
         <button class="previous"><img src="./images/icon-previous.svg" alt=""></button>
       </div>
