@@ -308,6 +308,29 @@ main {
     background-color: var(--clr-accent-300);
 }
 
+
+.cart {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    width: calc(100vw - 2rem);
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 12px 20px #00000040;
+}
+
+.cart h3 {
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--clr-primary-100);
+}
+
+.cart-list {
+    min-height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (min-width :35rem) {
     header {
         margin-bottom: 5rem;
@@ -381,5 +404,10 @@ main {
 
     .purchase {
         flex-direction: row;
+    }
+
+    .cart {
+        right: min((100vw - 72rem), 28rem);
+        width: 358px;
     }
 }
