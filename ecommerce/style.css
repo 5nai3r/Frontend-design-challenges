@@ -70,6 +70,28 @@ main {
 .price {
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
+}
+
+.current-price {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    span {
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+        color: var(--clr-accent-500);
+        background-color: var(--clr-accent-100);
+        border-radius: var(--border-radius);
+    }
+}
+
+.original-price {
+    font-weight: 700;
+    text-decoration: line-through;
+    color: var(--clr-primary-200);
 }
 
 .count {
