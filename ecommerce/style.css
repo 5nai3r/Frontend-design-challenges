@@ -50,10 +50,18 @@ header {
 main {
     display: flex;
     flex-direction: column;
+    max-width: 64rem;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.picture {
+    max-width: 28rem;
 }
 
 .details {
     padding: 1.75rem;
+    max-width: 51ch;
 }
 
 .price {
