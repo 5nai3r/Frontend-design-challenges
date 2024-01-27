@@ -1,8 +1,46 @@
+:root {
+    --clr-accent-200: hsl(26, 100%, 55%);
+    --clr-accent-100: hsl(25, 100%, 94%);
+    --clr-primary-100: hsl(223, 64%, 98%);
+    --clr-primary-200: hsl(220, 14%, 75%);
+    --clr-primary-300: hsl(219, 9%, 45%);
+    --clr-primary-500: hsl(220, 13%, 13%);
+}
+
+
+.fs-500 {
+    font-size: 1rem;
+}
+
+.fs-700 {
+    font-size: 1.5rem;
+}
+
+.fs-900 {
+    font-size: 2rem;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
 
+.accent-text {
+    color: var(--clr-accent-200);
+}
 
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1rem;
+}
 
 header {
     height: 70px;
