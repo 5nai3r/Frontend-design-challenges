@@ -44,6 +44,10 @@
     margin-top: var(--flow-space, 1rem);
 }
 
+.hidden {
+    display: none !important;
+}
+
 body {
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 1rem;
@@ -189,10 +193,6 @@ main {
     left: 1rem;
 }
 
-.picture img {
-    border-radius: var(--border-radius);
-}
-
 .carousel {
     display: none;
     margin-top: 2rem;
@@ -215,6 +215,15 @@ main {
 .carousel img.selected {
     outline: 3px solid var(--clr-accent-800);
     opacity: 0.5;
+}
+
+.lightbox {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .details {
@@ -334,6 +343,10 @@ main {
         flex-direction: row;
     }
 
+    .picture img {
+        border-radius: var(--border-radius);
+    }
+
     .carousel {
         display: grid;
     }
@@ -341,6 +354,25 @@ main {
     .next,
     .previous {
         display: none;
+    }
+
+    .lightbox {
+        display: flex;
+    }
+
+    .lightbox .next,
+    .lightbox .previous {
+        display: grid;
+    }
+
+    .lightbox .next {
+        right: 0;
+        transform: translateX(50%);
+    }
+
+    .lightbox .previous {
+        left: 0;
+        transform: translateX(-50%);
     }
 
     .price {
