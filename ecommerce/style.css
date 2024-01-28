@@ -40,6 +40,14 @@
     color: var(--clr-accent-500);
 }
 
+.color-primary-300 {
+    color: var(--clr-primary-300)
+}
+
+.color-primary-500 {
+    color: var(--clr-primary-500)
+}
+
 .flow>*:where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 }
@@ -325,10 +333,46 @@ main {
 }
 
 .cart-list {
-    min-height: 16rem;
     display: flex;
+    gap: 1rem;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+}
+
+.cart-list:not(:has(.cart-item)) {
+    min-height: 16rem;
+}
+
+.cart-list:not(:has(.cart-item)) .btn-add {
+    display: none;
+}
+
+.cart-list:has(.cart-item) .empty-message {
+    display: none;
+}
+
+.cart-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.cart-item .thumbnail {
+    width: 3rem;
+    border-radius: calc(var(--border-radius)/2);
+}
+
+.cart-item p {
+    line-height: 1.5;
+}
+
+.cart-item .delete {
+    all: unset;
+    cursor: pointer;
+
 }
 
 @media (min-width :35rem) {
