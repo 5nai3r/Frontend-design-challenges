@@ -7,7 +7,7 @@ const minusBtn = document.querySelector('.btn-minus');
 const addToCartBtn = document.querySelector('.btn-add');
 const deleteBtn = document.querySelector('.delete');
 
-const quantityElement = document.querySelector('.count span');
+const quantityElement = document.querySelector('.count .amount');
 const cartList = document.querySelector('.cart-list');
 let quantity = 0;
 
@@ -48,7 +48,7 @@ addToCartBtn.addEventListener('click', function () {
     }
 });
 
-deleteBtn.addEventListener('click', function () {
+deleteBtn?.addEventListener('click', function () {
     deleteCartItem();
 });
 
