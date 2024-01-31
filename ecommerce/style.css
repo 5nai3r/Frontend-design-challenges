@@ -344,6 +344,22 @@ main {
     border-bottom: 2px solid var(--clr-primary-100);
 }
 
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon .total {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--clr-accent-500);
+    color: #fff;
+    font-size: 0.8rem;
+    padding-inline: 0.5em;
+    border-radius: 50% 50% 50% 50%;
+    transform: translateY(-50%) translateX(50%);
+}
+
 .cart-list {
     display: flex;
     gap: 1rem;

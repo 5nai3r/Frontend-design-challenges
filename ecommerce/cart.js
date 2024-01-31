@@ -9,7 +9,10 @@ const deleteBtn = document.querySelector('.delete');
 
 const quantityElement = document.querySelector('.count .amount');
 const cartList = document.querySelector('.cart-list');
+
+const totalIndicator = document.querySelector('.cart-icon .total')
 let quantity = 0;
+let totalQuantity = 0;
 
 cartToggle.addEventListener('click', (e) => {
     e.stopPropagation()
@@ -46,6 +49,8 @@ addToCartBtn.addEventListener('click', function () {
         addToCart();
         resetQuantity();
     }
+
+    updateTotalQuantity()
 });
 
 deleteBtn?.addEventListener('click', function () {
@@ -101,4 +106,20 @@ function deleteCartItem(cartItem) {
     }
 
     cartItem.remove();
+    updateTotalQuantity()
+}
+
+
+function updateTotalQuantity() {
+    const cartItemQuantityElements = document.querySelectorAll('.cart-item .quantity');
+    totalQuantity = 0
+    cartItemQuantityElements.forEach(element => {
+        const match = element.innerText.match(/\sx (\d+)/);
+        if (match) {
+            const quantity = parseInt(match[1], 10);
+            totalQuantity += quantity;
+        }
+    });
+
+    totalIndicator.innerText = totalQuantity == 0 ? '' : totalQuantity;
 }
