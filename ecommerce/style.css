@@ -436,6 +436,8 @@ main {
     }
 
     .lightbox {
+        position: fixed;
+        inset: 0;
         display: flex;
     }
 
