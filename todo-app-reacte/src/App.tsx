@@ -14,6 +14,7 @@ export interface Todo {
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [filter, setFilter] = useState<boolean | string>(false)
 
   useEffect(() => {
@@ -59,13 +60,15 @@ const App: React.FC = () => {
   }
 
   return (
-    <div data-theme="dark">
+    <div data-theme={darkMode ? "dark" : "light"}>
       <div className="app">
 
         <header>
           <h1>TODO</h1>
           <label htmlFor="darkModeToggle" className="darkmode-switch">
-            <input aria-label="switch-theme" type="checkbox" id="darkModeToggle" />
+            <input aria-label="switch-theme" type="checkbox" id="darkModeToggle"
+              onClick={() => setDarkMode(!darkMode)}
+            />
             <span className="checkbox-icon"></span>
           </label>
         </header>
@@ -81,9 +84,9 @@ const App: React.FC = () => {
         <div className="todo-footer">
           <span> {remaining()}  items left</span>
           <div className="filter">
-            <button onClick={() => setFilter('all')} >All</button>
-            <button onClick={() => setFilter(false)}>Active</button>
-            <button onClick={() => setFilter(true)}>Completed</button>
+            <button onClick={() => setFilter('all')} className={(filter == 'all') ? 'selected' : ""} >All</button>
+            <button onClick={() => setFilter(false)} className={!filter ? 'selected' : ""} >Active</button>
+            <button onClick={() => setFilter(true)} className={filter == true ? 'selected' : ""} >Completed</button>
           </div>
           <button onClick={removeCompleted} >Clear completed</button>
         </div>
