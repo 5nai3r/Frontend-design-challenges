@@ -79,7 +79,7 @@ const App: React.FC = () => {
 
 
 
-        <TodoList todos={filtredList()} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+        <TodoList todos={filtredList()} removeTodo={removeTodo} toggleTodo={toggleTodo} setTodos={setTodos} />
 
         <div className="todo-footer">
           <span> {remaining()}  items left</span>
