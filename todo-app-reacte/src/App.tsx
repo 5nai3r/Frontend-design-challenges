@@ -7,7 +7,7 @@ import './App.css';
 export interface Todo {
   id: string;
   task: string;
-  completed: Boolean;
+  completed: boolean;
 }
 
 
@@ -50,12 +50,6 @@ const App: React.FC = () => {
     ));
   };
 
-  const showRemoveCompleted = () => {
-    const completedTodos = todos.filter(todo => todo.completed)
-    return completedTodos.length >= 1 ? true : false
-  }
-
-
   const filtredList = () => {
     return filter == "all" ? todos : todos.filter(todo => todo.completed == filter)
   }
@@ -65,23 +59,36 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="App">
-      <h1>Todo List</h1>
-      <AddTodo addTodo={addTodo} />
-      <TodoList todos={filtredList()} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+    <div data-theme="dark">
+      <div className="app">
 
-      {
-        showRemoveCompleted() ?
-          <button onClick={removeCompleted}>remove completed</button> : null
-      }
+        <header>
+          <h1>TODO</h1>
+          <label htmlFor="darkModeToggle" className="darkmode-switch">
+            <input aria-label="switch-theme" type="checkbox" id="darkModeToggle" />
+            <span className="checkbox-icon"></span>
+          </label>
+        </header>
 
-      <p>Filter</p>
-      <button onClick={() => setFilter('all')}>All</button>
-      <button onClick={() => setFilter(true)}>Completed</button>
-      <button onClick={() => setFilter(false)}>Active</button>
+        <div className="todo-input">
+          <AddTodo addTodo={addTodo} />
+        </div>
 
-      <p>Remaining : {remaining()}</p>
 
+
+        <TodoList todos={filtredList()} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+
+        <div className="todo-footer">
+          <span> {remaining()}  items left</span>
+          <div className="filter">
+            <button onClick={() => setFilter('all')} >All</button>
+            <button onClick={() => setFilter(false)}>Active</button>
+            <button onClick={() => setFilter(true)}>Completed</button>
+          </div>
+          <button onClick={removeCompleted} >Clear completed</button>
+        </div>
+
+      </div>
     </div>
   );
 };

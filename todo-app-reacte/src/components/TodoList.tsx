@@ -11,11 +11,12 @@ interface TodoListProps {
 
 const TodoList: React.FC<TodoListProps> = ({ todos, removeTodo, toggleTodo }) => {
     return (
-        <ul>
+        <div className="todo-list">
             {todos.map((todo, index) => (
                 <TodoItem key={index} todo={todo} removeTodo={removeTodo} toggleTodo={toggleTodo} />
             ))}
-        </ul>
+        </div>
+
     );
 };
 

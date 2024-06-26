@@ -9,14 +9,22 @@ interface TodoItemProps {
 
 const TodoItem: React.FC<TodoItemProps> = ({ todo, removeTodo, toggleTodo }) => {
     return (
-        <li>
-            <span
-                style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
-                onClick={() => toggleTodo(todo.id)}
 
-            >{todo.task}</span>
-            <button onClick={() => removeTodo(todo.id)}>Remove</button>
-        </li>
+        <>
+            <div className="todo-item">
+                <label className="checkbox">
+                    <input aria-label="toggle" type="checkbox"
+                        checked={todo.completed}
+                        onClick={() => toggleTodo(todo.id)} />
+                    <span className="checkbox-icon"></span>
+                </label>
+                <input aria-label="todo-text" type="text" className="text" value={todo.task} />
+                <button aria-label="delete" className="delete" onClick={() => removeTodo(todo.id)}></button>
+            </div>
+        </>
+
+
+
     );
 };
 
