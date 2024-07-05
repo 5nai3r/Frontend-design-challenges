@@ -91,6 +91,16 @@ const App: React.FC = () => {
           <button onClick={removeCompleted} >Clear completed</button>
         </div>
 
+
+        <div className="hint-text">
+          <span>Drag and drop to reorder list</span>
+        </div>
+
+
+        <div className="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="mailto:ismail.monsieur495@aleeas.com">C. ismail</a>.
+        </div>
       </div>
     </div>
   );
