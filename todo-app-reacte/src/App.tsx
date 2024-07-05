@@ -59,6 +59,12 @@ const App: React.FC = () => {
     return todos.filter(todo => !todo.completed).length
   }
 
+  const updateTodo = (id: string, newValue: string) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, task: newValue } : todo
+    ));
+  }
+
   return (
     <div data-theme={darkMode ? "dark" : "light"}>
       <div className="app">
@@ -79,7 +85,7 @@ const App: React.FC = () => {
 
 
 
-        <TodoList todos={filtredList()} removeTodo={removeTodo} toggleTodo={toggleTodo} setTodos={setTodos} />
+        <TodoList todos={filtredList()} removeTodo={removeTodo} toggleTodo={toggleTodo} setTodos={setTodos} updateTodo={updateTodo} />
 
         <div className="todo-footer">
           <span> {remaining()}  items left</span>

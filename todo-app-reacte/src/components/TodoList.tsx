@@ -8,10 +8,10 @@ interface TodoListProps {
     removeTodo: (task: string) => void;
     toggleTodo: (id: string) => void;
     setTodos: (todos: Todo[]) => void;
-
+    updateTodo: (id: string, value: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos, removeTodo, toggleTodo, setTodos }) => {
+const TodoList: React.FC<TodoListProps> = ({ todos, removeTodo, toggleTodo, setTodos, updateTodo }) => {
     return (
         <div className="todo-list">
             <Reorder.Group axis="y" values={todos} onReorder={setTodos} className="todo-list">
@@ -19,7 +19,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, removeTodo, toggleTodo, setT
 
                     <Reorder.Item key={todo.id} value={todo}>
 
-                        <TodoItem key={todo.id} todo={todo} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+                        <TodoItem key={todo.id} todo={todo} removeTodo={removeTodo} toggleTodo={toggleTodo} updateTodo={updateTodo} />
 
                     </Reorder.Item>
 
