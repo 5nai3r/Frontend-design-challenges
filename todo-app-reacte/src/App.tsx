@@ -22,8 +22,8 @@ const App: React.FC = () => {
     const savedTodos = localStorage.getItem('todos');
     if (savedTodos) {
       setTodos(JSON.parse(savedTodos));
-      setLoaded(true);
     }
+    setLoaded(true);
   }, []);
 
   useEffect(() => {
