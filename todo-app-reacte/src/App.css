@@ -47,7 +47,7 @@
 }
 
 .todo-item .delete {
-    background-image: url("/icon-cross.svg");
+    background-image: url("./assets/icon-cross.svg");
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
